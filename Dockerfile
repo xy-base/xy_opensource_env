@@ -1,12 +1,12 @@
 
-ARG xy_ubuntu_version=24.04
-FROM ubuntu:${xy_ubuntu_version}
+ARG os_version=24.04
+FROM ubuntu:${os_version}
 
-ARG xy_base_version=1.0
+ARG version=1.0
 LABEL name="xy_base"
-LABEL version="${xy_base_version}"
+LABEL version="${version}"
 LABEL description="xy_base"
-ENV xy_base "${xy_base_version}"
+ENV xy_base "${version}"
 ARG username="xy_base"
 ARG password="abc1236547890"
 ARG groupname="xy_base"
@@ -26,7 +26,7 @@ RUN groupadd ${groupname}
 RUN useradd --create-home --no-log-init --shell /bin/bash -m ${username} -g ${groupname} -d /home/${username} && echo "${username}:${password}" | chpasswd
 RUN usermod -a -G sudo ${username}
 USER ${username}
-RUN echo ${password} | sudo -S apt install -y curl wget systemctl python3 python3-pip zsh vim git
+RUN echo ${password} | sudo -S apt install -y curl wget systemctl python3 python3-pip zsh vim git mariadb-server
 RUN echo ${password} | sudo -S apt update && echo ${password} | sudo -S apt install -y --no-install-recommends \
         build-essential \
         libbz2-dev \
@@ -75,16 +75,16 @@ COPY ./install.sh /opt/xy_base/ohmysh/install.sh
 RUN echo ${password} | sudo -S chmod 777 /opt/xy_base/ohmysh/install.sh
 RUN sh /opt/xy_base/ohmysh/install.sh
 
+RUN zsh -c "source ~/.zshrc"
+
 RUN pip install xy_conda --break-system-packages
 RUN /home/${username}/.local/bin/xy_conda -w install_b
 
 # RUN pip install -r /opt/xy_base/python/requirements.txt
-
 RUN echo ${password} | sudo -S mkdir -p /opt/xy_base/mysql/
 RUN echo ${password} | sudo -S touch /opt/xy_base/mysql/.root_key.txt
 RUN echo ${password} | sudo -S chmod 777 -R /opt/xy_base/
 
-RUN apt install -y mariadb-server
-RUN echo ${password} | sudo -S nohup bash -c "mysqld_safe --skip-grant-tables&" && sleep 10 && python3 /opt/xy_base/python/initial_mysql.py
+RUN echo ${password} | sudo -S nohup zsh -c "mysqld_safe --skip-grant-tables&" && sleep 10 && python3 /opt/xy_base/python/initial_mysql.py
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
