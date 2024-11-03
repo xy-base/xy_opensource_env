@@ -1,0 +1,29 @@
+wheel
+ipython
+pillow
+pytz
+django-simpleui
+djangorestframework
+tornado
+django
+supervisor
+uwsgi
+mysqlclient
+
+# server
+xy_web_server
+
+# settings
+xy_web_settings
+
+# model
+xy_django_model
+xy_django_serializer
+
+# xy_django_app
+xy_django_app_account
+
+# xy_request_handler
+xy_request_handler_base
+xy_request_handler_web
+xy_request_handler_api
