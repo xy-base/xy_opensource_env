@@ -19,7 +19,8 @@ XiYang open source software package operating environment.
 ## Source Code Repositories
 
 - <a href="https://github.com/xy-base/xy_opensource_env.git" target="_blank">Github</a>  
-- <a href="https://gitee.com/xy-base/xy_opensource_env.git" target="_blank">Gitee</a>
+- <a href="https://gitee.com/xy-opensource/xy_opensource_env.git" target="_blank">Gitee</a>  
+- <a href="https://gitcode.com/xy-opensource/xy_opensource_env.git" target="_blank">GitCode</a>  
 
 ## Installation
 
