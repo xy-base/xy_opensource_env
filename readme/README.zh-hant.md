@@ -8,9 +8,8 @@
 -->
 # xy_opensource_env
 
-- [简体中文](../README.md)
-- [繁體中文](README.zh-hant.md)
-- [English](README.en.md)
+| [简体中文](../README.md)         | [繁體中文](./README.zh-hant.md)        |                      [English](./README.en.md)          |
+| ----------- | -------------|---------------------------------------|
 
 ## 說明
 
@@ -18,9 +17,9 @@
 
 ## 程式碼庫
 
-- <a href="https://github.com/xy-base/xy_opensource_env.git" target="_blank">Github位址</a>  
-- <a href="https://gitee.com/xy-opensource/xy_opensource_env.git" target="_blank">Gitee位址</a>  
-- <a href="https://gitcode.com/xy-opensource/xy_opensource_env.git" target="_blank">GitCode位址</a>  
+| [Github](https://github.com/xy-base/xy_opensource_env.git)         | [Gitee](https://gitee.com/xy-opensource/xy_opensource_env.git)        |                      [GitCode](https://gitcode.com/xy-opensource/xy_opensource_env.git)          |
+| ----------- | -------------|---------------------------------------|
+
 
 ## 安裝
 
