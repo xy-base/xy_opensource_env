@@ -15,8 +15,8 @@ ENV TZ=Asia/Shanghai
 RUN apt update
 RUN apt -y upgrade
 RUN apt install -y ca-certificates
-RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
-COPY ./sources.list /etc/apt/sources.list
+RUN sed -i "s@http://.*archive.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g" /etc/apt/sources.list
+RUN sed -i "s@http://.*security.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g" /etc/apt/sources.list
 RUN apt update
 RUN apt -y upgrade
 RUN apt-get -yq install tzdata
