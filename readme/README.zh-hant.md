@@ -30,9 +30,18 @@ docker pull yuyangit/xy_opensource_env:0.0.1
 
 ## 使用
 
+###### 1. 編譯鏡像
+
 ```bash
 # bash
-docker run -itd --privileged --restart always --name xy_base -v <宿主路径>:<容器路径> yuyangit/xy_opensource_env:0.0.1
+sh ./build.sh
+```
+
+##### 2. 運行容器
+
+```bash
+# bash
+docker run -itd --privileged --restart always --name xy_base -v <宿主路徑>:<容器路徑> yuyangit/xy_opensource_env:0.0.1
 ```
 
 ## 許可證

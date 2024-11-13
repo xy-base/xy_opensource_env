@@ -13,7 +13,7 @@
 
 ## Description
 
-XiYang open source software package operating environment.
+xy open source software package operating environment.
 
 ## Source Code Repositories
 
@@ -30,9 +30,18 @@ docker pull yuyangit/xy_opensource_env:0.0.1
 
 ## How to use
 
+###### 1. Build Image
+
 ```bash
 # bash
-docker run -itd --privileged --restart always --name xy_base -v <宿主路径>:<容器路径> yuyangit/xy_opensource_env:0.0.1
+sh ./build.sh
+```
+
+##### 2. Run Container
+
+```bash
+# bash
+docker run -itd --privileged --restart always --name xy_base -v <host path>:<container path> yuyangit/xy_opensource_env:0.0.1
 ```
 
 ## License
