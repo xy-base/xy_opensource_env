@@ -25,7 +25,7 @@ xy open source software package operating environment.
 
 ```bash
 # bash
-docker pull yuyangit/xy_opensource_env:0.0.1
+docker pull yuyangit/xy_opensource_env:latest
 ```
 
 ## How to use
@@ -41,7 +41,7 @@ sh ./build.sh
 
 ```bash
 # bash
-docker run -itd --privileged --restart always --name xy_base -v <host path>:<container path> yuyangit/xy_opensource_env:0.0.1
+docker run -itd --privileged --restart always --name xy_base -v <host path>:<container path> yuyangit/xy_opensource_env:latest
 ```
 
 ## License

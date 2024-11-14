@@ -25,7 +25,7 @@
 
 ```bash
 # bash
-docker pull yuyangit/xy_opensource_env:0.0.1
+docker pull yuyangit/xy_opensource_env:latest
 ```
 
 ## 使用
@@ -41,7 +41,7 @@ sh ./build.sh
 
 ```bash
 # bash
-docker run -itd --privileged --restart always --name xy_base -v <宿主路徑>:<容器路徑> yuyangit/xy_opensource_env:0.0.1
+docker run -itd --privileged --restart always --name xy_base -v <宿主路徑>:<容器路徑> yuyangit/xy_opensource_env:latest
 ```
 
 ## 許可證
