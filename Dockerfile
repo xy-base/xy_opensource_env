@@ -2,7 +2,7 @@
 ARG os_version=24.04
 FROM ubuntu:${os_version}
 
-ARG version=1.0
+ARG version=0.0.2
 LABEL name="xy_base"
 LABEL version="${version}"
 LABEL description="xy_base"
@@ -20,13 +20,11 @@ RUN sed -i "s@http://.*security.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@
 RUN apt update
 RUN apt -y upgrade
 RUN apt-get -yq install tzdata
-RUN apt install -y sudo
-RUN apt install -y bash
+RUN apt install -y sudo bash zsh curl wget systemctl python3 python3-pip vim git make llvm clang pkg-config zip mariadb-server
 RUN groupadd ${groupname}
 RUN useradd --create-home --no-log-init --shell /bin/bash -m ${username} -g ${groupname} -d /home/${username} && echo "${username}:${password}" | chpasswd
 RUN usermod -a -G sudo ${username}
 USER ${username}
-RUN echo ${password} | sudo -S apt install -y curl wget systemctl python3 python3-pip zsh vim git mariadb-server
 RUN echo ${password} | sudo -S apt update && echo ${password} | sudo -S apt install -y --no-install-recommends \
         build-essential \
         libbz2-dev \
@@ -37,10 +35,7 @@ RUN echo ${password} | sudo -S apt update && echo ${password} | sudo -S apt inst
         libsqlite3-dev \
         libssl-dev \
         liblzma-dev \
-        llvm \
-        make \
         netbase \
-        pkg-config \
         tk-dev \
         xz-utils \
         zlib1g-dev \
@@ -71,10 +66,12 @@ VOLUME ["/xy_base"]
 RUN echo ${password} | sudo -S ln -snf /usr/share/zoneinfo/$TZ /etc/localtime 
 RUN echo ${password} | sudo -S dpkg-reconfigure -f noninteractive tzdata
 
+SHELL ["/bin/zsh", "--login", "-c"]
+
 COPY ./install.sh /opt/xy_base/ohmysh/install.sh
 RUN echo ${password} | sudo -S chmod 777 /opt/xy_base/ohmysh/install.sh
 RUN sh /opt/xy_base/ohmysh/install.sh
-
+CMD ["zsh"]
 RUN zsh -c "source ~/.zshrc"
 
 RUN pip install xy_conda --break-system-packages
