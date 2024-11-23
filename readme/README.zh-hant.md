@@ -51,7 +51,7 @@ xy_opensource_env 根據 <木蘭寬鬆許可證, 第2版> 獲得許可。有關�
 
 如果小夥伴們覺得這些工具還不錯的話，能否請咱喝一杯咖啡呢?  
 
-![Pay-Total](./Pay-Total.png)
+![pay-total](./pay-total.png)
 
 ## 聯繫方式
 

@@ -51,7 +51,7 @@ xy_opensource_env is licensed under the <Mulan Permissive Software License，Ver
 
 If you think these tools are pretty good, Can you please have a cup of coffee?  
 
-![Pay-Total](./Pay-Total.png)  
+![pay-total](./pay-total.png)  
 
 
 ## Contact
