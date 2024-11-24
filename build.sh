@@ -1,1 +1,1 @@
-DOCKER_BUILDKIT=1 docker build .
+DOCKER_BUILDKIT=1 docker build --rm --tag yuyangit/xy_opensource_env . $*
