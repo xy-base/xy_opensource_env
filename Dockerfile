@@ -8,7 +8,7 @@ LABEL version="${version}"
 LABEL description="xy_base"
 ENV xy_base "${version}"
 ARG username="xy_base"
-ARG password="abc1236547890"
+ARG password="Abc123654@"
 ARG groupname="xy_base"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Shanghai
